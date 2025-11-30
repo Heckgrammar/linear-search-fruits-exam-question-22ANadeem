@@ -13,6 +13,34 @@
             
             // You must write your own linear search routine and not use any built-in fuctions available in C#
             // You should use meaningful variable names
+            using System;
+
+
+
+        Console.WriteLine("Enter the word you would like to find:");
+        string targetWord = Console.ReadLine();
+
+        bool isFound = FindWordLinearSearch(wordList, targetWord);
+
+        if (isFound)
+        {
+            Console.WriteLine("True");
         }
+        else
+        {
+            Console.WriteLine("False");
+        }
+    }
+
+    static bool FindWordLinearSearch(string[] words, string searchWord)
+    {
+        for (int i = 0; i < words.Length; i++)
+        {
+            if (words[i] == searchWord)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
